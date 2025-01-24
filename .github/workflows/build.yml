@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+
 jobs:
   build:
     name: Build and analyze
@@ -17,7 +18,7 @@ jobs:
       - uses: SonarSource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://fc30-2800-bf0-26-10e3-c517-b694-f858-407d.ngrok-free.app
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: SonarSource/sonarqube-quality-gate-action@v1
